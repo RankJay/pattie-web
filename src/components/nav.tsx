@@ -3,7 +3,6 @@ import { MobileMenu } from "@/components/mobile-menu";
 import { SmartLink } from "@/components/smart-link";
 import { Button } from "@/components/ui/button";
 import { links, navLinks } from "@/lib/constants";
-import { MessageCircle } from "lucide-react";
 
 export function Nav() {
   return (
@@ -23,10 +22,7 @@ export function Nav() {
         </nav>
         <div className="flex items-center gap-3">
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <SmartLink href={links.discord}>
-              <MessageCircle className="size-4" aria-hidden="true" />
-              Join Discord
-            </SmartLink>
+            <SmartLink href={links.github}>Star on GitHub</SmartLink>
           </Button>
           <MobileMenu />
         </div>

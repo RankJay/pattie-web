@@ -16,7 +16,7 @@ export function MobileMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="md:hidden" aria-label="Open menu">
+        <Button variant="secondary" size="icon" className="md:hidden" aria-label="Open menu">
           <Menu className="size-5" aria-hidden="true" />
         </Button>
       </SheetTrigger>
@@ -37,8 +37,8 @@ export function MobileMenu() {
             </SheetClose>
           ))}
           <SheetClose asChild>
-            <SmartLink href={links.discord} className={buttonVariants({ className: "mt-4" })}>
-              Join Discord
+            <SmartLink href={links.github} className={buttonVariants({ className: "mt-4" })}>
+              Star on GitHub
             </SmartLink>
           </SheetClose>
         </nav>

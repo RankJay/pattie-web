@@ -8,13 +8,12 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground font-bold hover:brightness-110",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-accent font-semibold",
-        outline: "border-border text-foreground hover:bg-accent border",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 font-bold",
+        secondary:
+          "border-border bg-secondary text-secondary-foreground hover:bg-muted border font-semibold",
         ghost: "text-muted-foreground hover:text-foreground",
         brand: "bg-brown text-cream font-bold hover:brightness-125",
-        cream: "bg-cream text-brown font-bold hover:brightness-95",
-        "brand-outline": "border-brown text-brown hover:bg-brown/10 border-2 font-bold",
+        "on-amber": "border-brown text-brown hover:bg-brown/10 border-2 font-bold",
       },
       size: {
         default: "px-7 py-4",

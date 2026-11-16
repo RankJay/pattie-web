@@ -1,17 +1,9 @@
+import { Compare } from "@/components/compare";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
+import { Lifecycle } from "@/components/lifecycle";
 import { Nav } from "@/components/nav";
-import {
-  AgentPrompt,
-  Benchmark,
-  FinalCta,
-  HowItWorks,
-  Stats,
-  Scenarios,
-  Status,
-  Vocabulary,
-  WorksWith,
-} from "@/components/sections";
+import { Faq, FinalCta, Scenarios, Status } from "@/components/sections";
 
 export default function PattieLanding() {
   return (
@@ -19,14 +11,11 @@ export default function PattieLanding() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <WorksWith />
-        <Stats />
+        <Lifecycle />
+        <Compare />
         <Scenarios />
-        <HowItWorks />
-        <Benchmark />
-        <Vocabulary />
         <Status />
-        <AgentPrompt />
+        <Faq />
         <FinalCta />
       </main>
       <Footer />

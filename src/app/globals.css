@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Paper (light) palette, for reverting: background #fbf6ec foreground #2b1a12 card #fffdf8 card-foreground #2b1a12 popover #fffdf8 popover-foreground #2b1a12 primary #3b2418 primary-foreground #fff1d6 secondary #fffdf8 secondary-foreground #2b1a12 muted #f0e6d2 muted-foreground #6b5848 accent #f0e6d2 accent-foreground #2b1a12 border #e4d9c6 input #e4d9c6 ring #8a4f00 amber-ink #8a4f00 dim #9c8f82 code #1f140e code-foreground #f3ece2 code-muted #a39a90 */
 @theme {
   --color-background: #0b0a0a;
   --color-foreground: #f3ece2;
@@ -20,11 +21,22 @@
   --color-input: #2a2523;
   --color-ring: #e9a64e;
 
-  --color-inset: #0f0d0c;
-  --color-faint: #7a7068;
-  --color-dim: #6b635c;
+  --color-amber: #e9a64e;
+  --color-amber-ink: #e9a64e;
   --color-brown: #3b2418;
   --color-cream: #fff1d6;
+  --color-dim: #6b635c;
+  --color-code: #0f0d0c;
+  --color-code-foreground: #f3ece2;
+  --color-code-muted: #a39a90;
+  --color-slab-top: #f9f1e0;
+  --color-slab-left: #e3d1b0;
+  --color-slab-right: #cdb78f;
+  --color-slab-amber-left: #c98532;
+  --color-slab-amber-right: #a8691c;
+  --color-cube-top: #3c2418;
+  --color-cube-left: #2c1a12;
+  --color-cube-right: #1f120b;
 
   --radius-xs: 0;
   --radius-sm: 0;
@@ -80,13 +92,29 @@
   }
 
   ::selection {
-    background: var(--color-primary);
-    color: var(--color-primary-foreground);
+    background: var(--color-amber);
+    color: var(--color-brown);
+  }
+}
+
+@keyframes flow-em {
+  to {
+    background-position: 0 0.6em;
+  }
+}
+
+@keyframes flow {
+  to {
+    background-position: 0 12px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  [class*="animate-[flow"] {
+    animation: none !important;
   }
 }

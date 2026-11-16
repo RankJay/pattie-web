@@ -4,27 +4,24 @@ import { links, siteConfig } from "@/lib/constants";
 
 const columns = [
   {
-    title: "DOCS",
+    title: "PRODUCT",
     links: [
-      { label: "Quickstart", href: links.docs },
-      { label: "CLI reference", href: `${links.docs}/cli` },
       { label: "How it works", href: "/#how-it-works" },
+      { label: "Status", href: "/#status" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
     title: "PROJECT",
     links: [
-      { label: "Roadmap", href: "/#status" },
       { label: "GitHub", href: links.github },
       { label: "Contributing", href: `${links.github}/blob/main/CONTRIBUTING.md` },
+      { label: "Report a bug", href: `${links.github}/issues` },
     ],
   },
   {
     title: "COMMUNITY",
-    links: [
-      { label: "Discord", href: links.discord },
-      { label: "Report a bug", href: `${links.github}/issues` },
-    ],
+    links: [{ label: "Discord", href: links.discord }],
   },
 ];
 
@@ -49,7 +46,7 @@ export function Footer() {
                   <SmartLink
                     key={link.label}
                     href={link.href}
-                    className="text-foreground hover:text-primary text-sm transition-colors"
+                    className="text-foreground hover:text-amber-ink text-sm transition-colors"
                   >
                     {link.label}
                   </SmartLink>
@@ -59,7 +56,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-border text-muted-foreground flex flex-col gap-2 border-t pt-5 font-mono text-xs sm:flex-row sm:justify-between">
-          <p>© {siteConfig.name}. v0 · Windows + Linux · macOS later.</p>
+          <p>© {siteConfig.name}. v0 pre-release · Windows + Linux · macOS later.</p>
           <p>Not affiliated with VB-Audio.</p>
         </div>
       </div>

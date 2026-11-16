@@ -1,23 +1,25 @@
 export const siteConfig = {
   name: "Pattie",
   shortName: "Pattie",
-  tagline: "Virtual audio devices, made by your app",
+  tagline: "Virtual audio devices, created from code",
   description:
-    "Named virtual microphones and speakers that any app can create, and every other app sees as real audio devices. No VB-CABLE. No reboot. No admin prompt in your app.",
+    "Your app creates a named microphone or speaker. Other apps list it like ordinary hardware. One call creates it, one call drops it, and your users never install a virtual cable.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "en_US",
 } as const;
 
+const github = "https://github.com/YOUR-ORG/pattie";
+
 export const links = {
-  docs: "/docs",
-  github: "https://github.com/YOUR-ORG/pattie",
+  github,
+  readme: `${github}#readme`,
+  method: `${github}#where-it-stands`,
   discord: "https://discord.gg/YOUR-INVITE",
 } as const;
 
 export const navLinks = [
-  { label: "Docs", href: links.docs },
-  { label: "CLI", href: `${links.docs}/cli` },
-  { label: "Roadmap", href: "/#status" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Status", href: "/#status" },
   { label: "Community", href: links.discord },
   { label: "GitHub", href: links.github },
 ] as const;

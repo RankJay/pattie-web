@@ -6,9 +6,11 @@ import { toast } from "sonner";
 
 interface CopyButtonProps {
   value: string;
+  label?: string;
+  className?: string;
 }
 
-export function CopyButton({ value }: CopyButtonProps) {
+export function CopyButton({ value, label, className }: CopyButtonProps) {
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(value);
@@ -22,11 +24,13 @@ export function CopyButton({ value }: CopyButtonProps) {
     <Button
       type="button"
       variant="ghost"
-      size="icon-sm"
-      aria-label={`Copy ${value}`}
+      size={label ? "sm" : "icon-sm"}
+      className={className}
+      aria-label={label ? undefined : `Copy ${value}`}
       onClick={copy}
     >
       <Copy className="size-4" aria-hidden="true" />
+      {label}
     </Button>
   );
 }
