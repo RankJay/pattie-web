@@ -1,18 +1,38 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @theme {
-  --color-bg: #0b0a0a;
-  --color-panel: #151312;
+  --color-background: #0b0a0a;
+  --color-foreground: #f3ece2;
+  --color-card: #151312;
+  --color-card-foreground: #f3ece2;
+  --color-popover: #151312;
+  --color-popover-foreground: #f3ece2;
+  --color-primary: #e9a64e;
+  --color-primary-foreground: #0b0a0a;
+  --color-secondary: #151312;
+  --color-secondary-foreground: #f3ece2;
+  --color-muted: #1c1917;
+  --color-muted-foreground: #a39a90;
+  --color-accent: #2a2523;
+  --color-accent-foreground: #f3ece2;
+  --color-border: #2a2523;
+  --color-input: #2a2523;
+  --color-ring: #e9a64e;
+
   --color-inset: #0f0d0c;
-  --color-track: #1c1917;
-  --color-line: #2a2523;
-  --color-fg: #f3ece2;
-  --color-muted: #a39a90;
   --color-faint: #7a7068;
   --color-dim: #6b635c;
-  --color-amber: #e9a64e;
   --color-brown: #3b2418;
   --color-cream: #fff1d6;
+
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-4xl: 0;
 }
 
 @theme inline {
@@ -26,40 +46,42 @@
 }
 
 @utility eyebrow {
-  @apply text-muted font-mono text-[13px] tracking-[0.15em] uppercase;
+  @apply text-muted-foreground font-mono text-[13px] tracking-[0.15em] uppercase;
 }
 
 @utility title-xl {
-  @apply font-display text-fg text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl lg:text-5xl;
-}
-
-@utility panel {
-  @apply border-line bg-panel border;
+  @apply font-display text-foreground text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl lg:text-5xl;
 }
 
 @utility status-row {
-  @apply border-line flex items-center gap-3 border-b px-5 py-3.5 last:border-b-0 sm:px-6;
+  @apply border-border flex items-center gap-3 border-b px-5 py-3.5 last:border-b-0 sm:px-6;
 }
 
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop {
+    border-color: var(--color-border);
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
   }
 
   body {
-    @apply bg-bg text-fg font-sans;
+    @apply bg-background text-foreground font-sans;
   }
 
-  a:focus-visible,
-  button:focus-visible {
-    outline: 2px solid var(--color-amber);
+  a:focus-visible {
+    outline: 2px solid var(--color-ring);
     outline-offset: 2px;
   }
 
   ::selection {
-    background: var(--color-amber);
-    color: var(--color-bg);
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
   }
 }
 

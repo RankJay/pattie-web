@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col">
         {children}
+        <Toaster />
         <Analytics />
         <SpeedInsights />
       </body>
