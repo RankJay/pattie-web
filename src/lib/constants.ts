@@ -8,7 +8,7 @@ export const siteConfig = {
   locale: "en_US",
 } as const;
 
-const github = "https://github.com/YOUR-ORG/pattie";
+const github = "https://github.com/RankJay/pattie";
 
 export const links = {
   github,
